@@ -13,16 +13,16 @@ struct WeatherView: View {
     var body: some View {
         VStack {
             Text(viewModel.cityName)
-                .font(.largeTitle)
-                .padding()
-            Text(viewModel.temperature)
-                .font(.system(size: 70))
-                .bold()
-            Text(viewModel.weatherIcon)
-                .font(.largeTitle)
-                .padding()
-            Text(viewModel.weatherDescription)
                 .font(.title2)
+            HStack {
+                Text(viewModel.temperature)
+                    .font(.title3)
+                    .bold()
+                Text(viewModel.weatherIcon)
+                    .font(.largeTitle)
+            }
+            Text(viewModel.weatherDescription)
+                .font(.title3)
         }.onAppear(perform: viewModel.refresh)
     }
 }
